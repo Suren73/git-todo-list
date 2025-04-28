@@ -5,7 +5,6 @@ import { API_URL } from '../constants';
 export function useRequestAddTodo(newTodo, setNewTodo, setTodos, setIsLoading) {
 	const [isCreating, setIsCreating] = useState(false);
 
-	// const { setIsLoading } = useRequestGetTodos();
 	function handleAdd() {
 		if (!newTodo.trim()) return;
 
@@ -15,7 +14,7 @@ export function useRequestAddTodo(newTodo, setNewTodo, setTodos, setIsLoading) {
 		setTimeout(() => {
 			axios
 				.post(API_URL, {
-					title: newTodo,
+					title: newTodo.trim(),
 					completed: false,
 				})
 				.then((response) => {

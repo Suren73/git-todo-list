@@ -28,15 +28,6 @@
 	letter-spacing: 1px;
 }
 
-.list {
-	list-style: none;
-	padding: 0;
-	counter-reset: todo-counter;
-	background-color: white;
-	border-radius: 8px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .list li {
 	padding: 1.5rem;
 	counter-increment: todo-counter;
@@ -109,83 +100,10 @@
 	z-index: 9999;
 }
 
-.overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(255, 255, 255, 0.9);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	z-index: 9999;
-}
-
-.spinner {
-	display: block;
-	width: 50px;
-	height: 50px;
-	margin: 2rem auto;
-	border: 5px solid #e3e3e3;
-	border-radius: 50%;
-	border-top-color: #3498db;
-	animation: rotate 1s linear infinite;
-}
-
-.message {
-	font-family: Arial, sans-serif;
-	font-size: 1.2em;
-	color: #333;
-}
-
-@keyframes rotate {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-.controls {
-	display: flex;
-	gap: 1rem;
-	margin-bottom: 1rem;
-	position: sticky;
-	top: 80px;
-	background: rgba(248, 249, 250, 0.9);
-	padding: 1rem 0;
-	z-index: 50;
-	backdrop-filter: blur(5px);
-}
-
-.search {
-	display: flex;
-	margin-bottom: 2rem;
-	position: sticky;
-	top: 170px;
-	background: rgba(248, 249, 250, 0.9);
-	padding: 1rem 0;
-	z-index: 40;
-	backdrop-filter: blur(5px);
-}
-
 .controlsUpdate {
 	width: 800px;
 	display: flex;
 	gap: 1rem;
-}
-
-.input {
-	flex: 1;
-	padding: 0.8rem;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	font-size: 1rem;
-	background-color: #eee;
-	color: rgba(0, 0, 0, 0.8);
 }
 
 .inputUpdate {
@@ -196,40 +114,6 @@
 	font-size: 1rem;
 	background-color: #eee;
 	color: rgba(0, 0, 0, 0.8);
-}
-
-.button,
-.buttonDelete,
-.buttonUpdate,
-.buttonSave,
-.buttonCancel {
-	padding: 0.8rem 1.5rem;
-	border: none;
-	border-radius: 4px;
-	background: #3498db;
-	color: white;
-	cursor: pointer;
-	transition: background 0.3s;
-}
-
-.button:hover {
-	background: #2980b9;
-}
-
-.buttonDelete {
-	background: #e72b2b;
-}
-
-.buttonDelete:hover {
-	background: #c02727;
-}
-
-.buttonUpdate {
-	background: #67e72b;
-}
-
-.buttonUpdate:hover {
-	background: #59c527;
 }
 
 .editContainer {
@@ -246,28 +130,4 @@
 	font-size: 1rem;
 	background-color: #eee;
 	color: rgba(0, 0, 0, 0.8);
-}
-
-.buttonSave {
-	background-color: #4caf50;
-}
-
-.buttonCancel {
-	background-color: #f44336;
-}
-
-.buttonSave:hover {
-	background-color: #418343;
-}
-
-.buttonCancel:hover {
-	background-color: #c13d33;
-}
-
-.activeSort {
-	background-color: #4caf50;
-}
-
-.activeSort:hover {
-	background-color: #2a662c;
 }

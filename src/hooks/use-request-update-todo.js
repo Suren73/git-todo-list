@@ -10,7 +10,7 @@ export function useRequestUpdateTodo(setTodos, setIsLoading, setEditingId) {
 		setTimeout(() => {
 			axios
 				.patch(`${API_URL}/${todoId}`, {
-					title: newTitle,
+					title: newTitle.trim(),
 				})
 				.then((response) => {
 					setTodos((prevTodo) =>
@@ -30,5 +30,5 @@ export function useRequestUpdateTodo(setTodos, setIsLoading, setEditingId) {
 		}, 2500);
 	}
 
-	return { handleUpdate };
+	return handleUpdate;
 }

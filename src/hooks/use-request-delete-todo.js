@@ -20,5 +20,5 @@ export function useRequestDeleteTodo(setTodos, setIsLoading) {
 				});
 		}, 2500);
 	}
-	return { handleDelete };
+	return handleDelete;
 }
