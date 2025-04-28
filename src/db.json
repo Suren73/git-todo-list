@@ -1,24 +1,9 @@
 {
-  "todos": [
-    {
-      "id": "4ea3",
-      "title": "Изучить React",
-      "completed": false
-    },
-    {
-      "id": "15d2",
-      "title": "Сходить в магазин!",
-      "completed": false
-    },
-    {
-      "id": "184c",
-      "title": "Купить молока",
-      "completed": false
-    },
-    {
-      "id": "f8d2",
-      "title": "Сделать домашнее задание",
-      "completed": false
-    }
-  ]
+	"todos": [
+		{
+			"id": "4ea3",
+			"title": "Изучить React!!!",
+			"completed": false
+		}
+	]
 }

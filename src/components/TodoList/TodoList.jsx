@@ -1,6 +1,7 @@
 import React from 'react';
 import { getFilteredTodos, getSortedTodos } from '../../utils';
 import { TodoItem } from '../TodoItem/TodoItem';
+import { useDebounce } from '../../hooks';
 import styles from './TodoList.module.css';
 
 export const TodoList = ({
@@ -15,7 +16,9 @@ export const TodoList = ({
 	handleUpdate,
 	handleDelete,
 }) => {
-	const filteredTodos = getFilteredTodos(todos, searchQuery);
+	const debouncedSearchQuery = useDebounce(searchQuery, 500);
+
+	const filteredTodos = getFilteredTodos(todos, debouncedSearchQuery);
 	const sortedAndFilteredTodos = getSortedTodos(filteredTodos, sortByAlphabet);
 
 	return (
