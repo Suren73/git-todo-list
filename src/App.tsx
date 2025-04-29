@@ -1,21 +1,29 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { JSX, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './App.module.css';
 
-function App() {
-	const [todos, setTodos] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
+interface Todo {
+	id: number;
+	userId: number;
+	title: string;
+	completed: boolean;
+}
+
+function App(): JSX.Element {
+	const [todos, setTodos] = useState<Todo[]>([]);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	useEffect(() => {
 		setIsLoading(true);
 
 		axios
-			.get('https://jsonplaceholder.typicode.com/todos')
-			.then((response) => response.data)
-			.then((data) => {
-				setTodos(data);
-				// console.log(data);
+			.get<Todo[]>('https://jsonplaceholder.typicode.com/todos')
+			.then((response) => setTodos(response.data))
+			.catch((error: unknown) => {
+				if (error instanceof Error) {
+					console.error('Error fetching todos:', error.message);
+				}
 			})
 			.finally(() => setIsLoading(false));
 	}, []);
